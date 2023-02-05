@@ -19,4 +19,20 @@
     // animal1.Age = 5;
     // animal1.DisplayDetails();
 
- 
+ MethodsLearner m1 = new();
+//  m1.Display();
+//  m1.Display("Hi");
+//  m1.Display("Welcome");
+
+//  m1.Add(34.3f, 56.5f);
+
+ var s = m1.Greet();
+ Console.WriteLine(s);
+
+ var d = m1.GetDay();
+ Console.WriteLine(d);
+
+ float f = 12.3f, se = 45.6f, t = 67.12f;
+ var sum = m1.Add(f + se + t);
+ var tt = $"{f} + {se} + {t} = {sum}";
+ Console.WriteLine();
