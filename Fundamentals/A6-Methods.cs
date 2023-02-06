@@ -41,4 +41,22 @@ public float Add(float first, float second, float third)
     float sum = first + second + third;
     return sum;
 }
+// optional parameters, variable number of arguments 
+public double Multiply(double x, double y, double z = 1)
+{
+var product = x * y * z; // Multiplicand * Multiper
+return product;
 }
+// expression bodied members
+public float Divide(float first, float second) => first / second;
+
+// write a method to calculate minimum among supplied numbers
+public int CalculateMin(params int[] numbers)
+{
+   int min = numbers
+   }
+}
+
+
+
+

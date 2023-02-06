@@ -26,13 +26,18 @@
 
 //  m1.Add(34.3f, 56.5f);
 
- var s = m1.Greet();
- Console.WriteLine(s);
+//  var s = m1.Greet();
+//  Console.WriteLine(s);
 
- var d = m1.GetDay();
- Console.WriteLine(d);
+//  var d = m1.GetDay();
+//  Console.WriteLine(d);
 
- float f = 12.3f, se = 45.6f, t = 67.12f;
- var sum = m1.Add(f + se + t);
- var tt = $"{f} + {se} + {t} = {sum}";
- Console.WriteLine();
+//  float f = 12.3f, se = 45.6f, t = 67.12f;
+//  var sum = m1.Add(f , se , t);
+//  var tt = $"{f} + {se} + {t} = {sum}";
+//  Console.WriteLine(tt);
+var p = m1.Multiply(22.22, 52.35, 25.32);
+var p1 = m1.Multiply(258.25, 2563.25);
+
+//named arguments 
+var p5 = m1.Multiply(z: 34.5, x: 67.7, y: 22.52);
