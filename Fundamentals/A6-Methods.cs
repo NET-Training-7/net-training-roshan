@@ -51,10 +51,8 @@ return product;
 public float Divide(float first, float second) => first / second;
 
 // write a method to calculate minimum among supplied numbers
-public int CalculateMin(params int[] numbers)
-{
-   int min = numbers
-   }
+
+
 }
 
 
