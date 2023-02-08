@@ -23,7 +23,10 @@ class Test2
     p1.age = 23;
     p1.name = "Ram";
     Person p2 = new("Kishan", 67);
-    Console.WriteLine(p2);
+    Console.WriteLine(p1.name, p1.age);
+    Console.WriteLine(p2.name, p2.age);
+
+  
   }
   
   
