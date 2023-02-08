@@ -41,12 +41,16 @@
 
 // //named arguments 
 // var p5 = m1.Multiply(z: 34.5, x: 67.7, y: 22.52);
-Assignment r1 = new();
-float r = r1.ProductOfSqaures(12.2f, 55.5f);
-Console.WriteLine(r);
+// Assignment r1 = new();
+// float r = r1.ProductOfSqaures(12.2f, 55.5f);
+// Console.WriteLine(r);
 
-double s = r1.CubeRoot(555);
-Console.WriteLine(s);
+// double s = r1.CubeRoot(555);
+// Console.WriteLine(s);
 
-float t = r1.CalculateBmiIndex(60f, 5.8f);
-Console.WriteLine($"Your BMI index is {t}");
+// float t = r1.CalculateBmiIndex(60f, 5.8f);
+// Console.WriteLine($"Your BMI index is {t}");
+
+Test2 r8 = new();
+r8.T();
+
