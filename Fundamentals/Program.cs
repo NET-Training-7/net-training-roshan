@@ -51,6 +51,8 @@
 // float t = r1.CalculateBmiIndex(60f, 5.8f);
 // Console.WriteLine($"Your BMI index is {t}");
 
-Test2 r8 = new();
-r8.T();
+// Test2 r8 = new();
+// r8.T();
 
+var car1 = new OilEngineVehicle("car", "nexon", "Tata", 4, 15.5f, "BA.33.PA 234", 1500f);
+car1.PrintDetails();
