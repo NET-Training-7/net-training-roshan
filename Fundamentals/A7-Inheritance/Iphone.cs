@@ -7,6 +7,7 @@ class Iphone : Mobile
     }
     internal override void GetDetails()
     {
-
+        base.GetDetails();
+        Console.WriteLine("iphone");
     }
 }
