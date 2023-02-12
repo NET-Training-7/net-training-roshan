@@ -54,5 +54,6 @@
 // Test2 r8 = new();
 // r8.T();
 
-var car1 = new OilEngineVehicle("car", "nexon", "Tata", 4, 15.5f, "BA.33.PA 234", 1500f);
-car1.PrintDetails();
+// var car1 = new OilEngineVehicle("car", "nexon", "Tata", 4, 15.5f, "BA.33.PA 234", 1500f);
+// car1.PrintDetails();
+
