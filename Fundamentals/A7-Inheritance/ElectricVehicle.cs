@@ -10,9 +10,9 @@ class ElectricVehicle : Vehicle
         vNumber: vNumber,
         vendor: vendor,
         model: model)
-        {
+    {
 
-        }
+    }
     float batteryCapacityInKw;
     float CalculateEnginePowerHP() => batteryCapacityInKw * 1.369f;
 }
