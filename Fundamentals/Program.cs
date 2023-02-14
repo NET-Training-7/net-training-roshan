@@ -56,9 +56,18 @@
 
 // var car1 = new OilEngineVehicle("car", "nexon", "Tata", 4, 15.5f, "BA.33.PA 234", 1500f);
 // car1.PrintDetails();
-using Libary;
-Book book1 =new();
-book1.Author = "Yann Martel";
-book1.Title = "Life of Pi";
-var x = book1.ISBN;
-Book.PrintBookDetails(); 
+// using Libary;
+// Book book1 =new();
+// book1.Author = "Yann Martel";
+// book1.Title = "Life of Pi";
+// var x = book1.ISBN;
+// Book.PrintBookDetails(); 
+
+// LINQ l = new();
+// l.LearnToQuery();
+
+// Generics<string> gn = new Generics<string>();
+//gn.Print<string>("Nepal is beautiful country");
+//gn.Print<byte>(79);
+// gn.Print<bool>(false);
+// gn.Greet("Hello there!");
