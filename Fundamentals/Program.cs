@@ -1,4 +1,5 @@
 ﻿using System;// See https://aka.ms/new-console-template for more information
+using IO;
 //  class ABC
 // {
 //      public static void Main()
@@ -71,3 +72,6 @@
 //gn.Print<byte>(79);
 // gn.Print<bool>(false);
 // gn.Greet("Hello there!");
+
+FDHandling fd = new();
+fd.LearnFiles();
