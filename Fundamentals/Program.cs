@@ -74,4 +74,4 @@ using IO;
 // gn.Greet("Hello there!");
 
 FDHandling fd = new();
-fd.LearnFiles();
+fd.LearnMore();
