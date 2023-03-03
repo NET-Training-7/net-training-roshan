@@ -1,0 +1,12 @@
+﻿College Management System
+==================================
+Students (Id, Name, Address, Gender, Dob, Phone, Email)
+Lecturers (Id, Name, Address, Gender, Dob, Phone, Email, Degree) 
+Staffs (Id, Name, Address, Gender, Dob, Phone, Email, )
+Program (Id, Name, Details, Started)
+Semester (Id, Name, StartDate, EndDate)
+Subject (Id, Name, CreditHours)
+Fee (Id, Amount)
+
+
+
