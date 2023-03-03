@@ -1,0 +1,47 @@
+﻿@page "/students"
+@model StudentListModel
+@*Display static list of students(at least 4) in a table styled with bootstrap*@
+@{
+    var s1 = new Student { Name = "Roshan Twayana", Rollno = 1234, Major = "Science", }
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Roll No.</th>
+            <th>Name</th>
+            <th>Major</th>
+            <th>Contact</th>
+            <th>Semester</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>12345</td>
+            <td>Roshan Twayana</td>
+            <td>Computer</td>
+            <td>9843317682</td>
+            <td>Sem III</td>
+        </tr>
+        <tr>
+            <td>12345</td>
+            <td>Roshan Twayana</td>
+            <td>Computer</td>
+            <td>9843317682</td>
+            <td>Sem III</td>
+        </tr>
+        <tr>
+            <td>12345</td>
+            <td>Roshan Twayana</td>
+            <td>Computer</td>
+            <td>9843317682</td>
+            <td>Sem III</td>
+        </tr>
+        <tr>
+            <td>12345</td>
+            <td>Roshan Twayana</td>
+            <td>Computer</td>
+            <td>9843317682</td>
+            <td>Sem III</td>
+        </tr>
+    </tbody>
+</table>
