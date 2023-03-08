@@ -8,5 +8,16 @@ Semester (Id, Name, StartDate, EndDate)
 Subject (Id, Name, CreditHours)
 Fee (Id, Amount)
 
+Databases
+============================================
+1. Relational: MySql, Oracle, *SQL Server, Postgres, SqLite etc.
+2. NoSq: MongoDb, DocumentDb etc.
+
+Database Access on .NET
+=============================
+1. ADO.NET
+2. ORM(Object Relational Mapper) Tool: *EF Core, NHibernate, Dapper, RepoDb etc.
+
+
 
 
