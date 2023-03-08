@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - College Management</title>
     <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <link href="~/lib/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/CollegeManagement.Web.styles.css" asp-append-version="true" />
 </head>
@@ -26,8 +27,14 @@
                                Students
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/students">All Students</a></li>
-                                <li><a class="dropdown-item" href="/students/add">Student Registration</a>
+                                <li><a class="dropdown-item" href="/students">
+                                    <i class="bi bi-table"></i> All Students</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="/students/add">
+                                        <i class="bi bi-person-plus-fill"></i>
+                                        Student Registration
+                                    </a>
+                                </li>
                             </ul>
                         </li>
                         @*<li class="nav-item">
@@ -53,7 +60,7 @@
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
