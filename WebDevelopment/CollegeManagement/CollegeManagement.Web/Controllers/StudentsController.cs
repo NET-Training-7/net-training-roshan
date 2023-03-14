@@ -6,23 +6,37 @@ namespace CollegeManagement.Web.Controllers
 {
     public class StudentsController : Controller
     {
+        CollegeDbContext db = new CollegeDbContext();
         public IActionResult Index()
         {
-            CollegeDbContext db = new CollegeDbContext();
+
             var students = db.students.ToList();
             return View(students);
         }
+
+           public IActionResult Details(int id)
+        {
+            var student = db.students.Find(id);
+            return View(student);
+        }
+
+        public IActionResult Add()
+        {
+            return View();
+
+        }
+
+        [HttpPost]
+        public IActionResult Add(Student student)
+        {
+            if (student == null || !ModelState.IsValid)
+                return View("Error", new ErrorViewModel {  RequestId = "Register Student"});
+            db.students.Add(student);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
     }
-        
-
-       
-
-        //public IActionResult Details(int id)
-        //{
-        //   var student= students.Where(x => x.RollNo == id).FirstOrDefault();
-        //    return View(student);
-        //}
-
-      
-    }
+}
 
