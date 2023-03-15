@@ -36,6 +36,37 @@ namespace CollegeManagement.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        public IActionResult Edit(int id)
+        {
+            var student = db.students.Find(id);
+            return View(student);
+
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Student student)
+        {
+            if (student == null || !ModelState.IsValid)
+                return View("Error", new ErrorViewModel { RequestId = "Update Student" });
+            db.students.Update(student);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public IActionResult DeleteConfirm(int id)
+        {
+            var student = db.students.Find(id);
+            return View(student);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Student student)
+        {
+            db.students.Remove(student);
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
 
     }
 }

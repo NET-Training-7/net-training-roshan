@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using CollegeManagement.Web.Enums;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace CollegeManagement.Web.Models
@@ -12,7 +13,7 @@ namespace CollegeManagement.Web.Models
         [RegularExpression("[A-Za-z ]+", ErrorMessage = "Only alphabets and space are allowed.")]
         public string Name { get; set; }
         public string? Address { get; set; }
-        public string Gender { get; set; }
+        public Sex Gender { get; set; }
         [DisplayName("Date Of Birth")]
         [DataType(DataType.Date)]
         public DateTime? Dob { get; set; }

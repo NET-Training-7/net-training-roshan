@@ -1,6 +1,7 @@
-﻿@model Student
+﻿@using CollegeManagement.Web.Enums;
+@model Student
 @{
-    string[] gender = { "Male", "Female", "Others" };
+    var gender = Enum.GetValues<Sex>();
 }
 
 <h3 class="text-center">New Student Form</h3>
