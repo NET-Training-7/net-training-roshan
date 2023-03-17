@@ -2,6 +2,7 @@
 using CollegeManagement.Web.Models;
 using CollegeManagement.Web.data;
 using F = System.IO.File;
+using CollegeManagement.Web.Helpers;
 
 namespace CollegeManagement.Web.Controllers
 {
@@ -32,18 +33,9 @@ namespace CollegeManagement.Web.Controllers
         {
             if (student == null || !ModelState.IsValid)
                 return View("Error", new ErrorViewModel { RequestId = "Register Student" });
-
-            //save avatar to physical folder
-            var image = student.Avatar;
-            var filename = $"{Guid.NewGuid()}_{image.FileName}";
-            var appFolder = Directory.GetCurrentDirectory();
-            var imageFolderPathRelative = $"/images/profiles/{filename}";
-            var imageFolderPathAbsolute = appFolder + "/wwwroot/" + imageFolderPathRelative ;
-
-            var avatar = F.Create(imageFolderPathAbsolute);
-            image.CopyTo(avatar);
-            avatar.Close();
-            student.AvatarPath = imageFolderPathRelative;
+            var avatarPath = FormImageHelper.SaveProfileImage(student.Avatar!);
+           
+            student.AvatarPath = avatarPath;
             db.students.Add(student);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -61,6 +53,12 @@ namespace CollegeManagement.Web.Controllers
         {
             if (student == null || !ModelState.IsValid)
                 return View("Error", new ErrorViewModel { RequestId = "Update Student" });
+
+            if (student.Avatar != null)
+            {
+                var path = FormImageHelper.SaveProfileImage(student.Avatar);
+                student.AvatarPath = path;
+            }
             db.students.Update(student);
             db.SaveChanges();
             return RedirectToAction("Index");
