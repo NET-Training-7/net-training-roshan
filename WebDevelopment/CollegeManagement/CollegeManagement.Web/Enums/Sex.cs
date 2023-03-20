@@ -1,9 +1,12 @@
-﻿namespace CollegeManagement.Web.Enums
+﻿namespace CollegeManagement.Web.Enums;
+public enum JobTitle
 {
-    public enum Sex
-    {
-        Male = 1,
-        Female,
-        Others
-    }
+    AssociateLecturer = 1,
+    Lecturer,
+    AssociateProfessor,
+    Professor,
+    HOD,
+    FrontDesk,
+    Helper,
+    ITAdmin
 }
