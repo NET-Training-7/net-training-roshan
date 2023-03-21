@@ -1,7 +1,10 @@
+using CollegeManagement.Web.data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<CollegeDbContext>();
 
 var app = builder.Build();
 
