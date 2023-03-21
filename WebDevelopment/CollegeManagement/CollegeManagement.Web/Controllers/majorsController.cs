@@ -5,7 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace CollegeManagement.Web.Controllers;
 public class MajorsController : Controller
 {
-    CollegeDbContext db = new CollegeDbContext();
+    private readonly CollegeDbContext db;
+
+    public MajorsController(CollegeDbContext _db)
+    {
+        db = _db;
+    }
 
     public ActionResult Index()
     {

@@ -3,12 +3,24 @@ using CollegeManagement.Web.Models;
 using CollegeManagement.Web.data;
 using F = System.IO.File;
 using CollegeManagement.Web.Helpers;
+using Microsoft.EntityFrameworkCore;
 
 namespace CollegeManagement.Web.Controllers
 {
     public class StudentsController : Controller
     {
-        CollegeDbContext db = new CollegeDbContext();
+        private readonly CollegeDbContext db;
+        public StudentsController(CollegeDbContext _db)
+        {
+            db = _db;
+        }
+
+        //async
+        //public async Task<IActionResult> Index()
+        //{
+        //    var students = await db.students.ToListAsync();
+        //    return View(students);
+        //}
         public IActionResult Index()
         {
 

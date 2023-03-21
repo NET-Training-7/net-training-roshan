@@ -12,9 +12,14 @@ namespace CollegeManagement.Web.Controllers
 {
     public class DepartmentsController : Controller
     {
-        private readonly CollegeDbContext _context = new CollegeDbContext();
+        private readonly CollegeDbContext _context;
 
-       
+        public DepartmentsController(CollegeDbContext context)
+        {
+            _context = context;
+        }
+
+
 
         // GET: Departments
         public async Task<IActionResult> Index()
