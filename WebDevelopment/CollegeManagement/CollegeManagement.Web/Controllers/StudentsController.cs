@@ -46,7 +46,7 @@ namespace CollegeManagement.Web.Controllers
             if (student == null || !ModelState.IsValid)
                 return View("Error", new ErrorViewModel { RequestId = "Register Student" });
             var avatarPath = FormImageHelper.SaveProfileImage(student.Avatar!);
-           
+
             student.AvatarPath = avatarPath;
             db.students.Add(student);
             db.SaveChanges();

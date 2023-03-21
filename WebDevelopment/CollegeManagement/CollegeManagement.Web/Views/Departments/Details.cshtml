@@ -1,4 +1,43 @@
-﻿@model CollegeManagement.Web.Models.Department
+﻿@model Department
+<form class="row g-3">
+    <div class="col-md-6">
+        <label class="form-label">Name</label>
+        <p class="form-control">@Model.Name</p>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Description</label>
+        <p class="form-control">@Model.Description</p>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Established</label>
+        <p class="form-control">@Model.Established</p>
+    </div>
+
+
+    <a class="btn btn-success" href="/departments">Back</a>
+    <a class="btn btn-dark" href="/departments/edit/@Model.Id">edit</a>
+    @*<a class="btn btn-dark" onclick="goEdit(@Model.Id)">Edit</a>*@
+
+
+</form>
+@*@section scripts {
+
+    <script type="text/javascript">
+
+        function goEdit(id) {
+
+            //alert('You clicked ' + id + "!");
+            window.location.href = "http://localhost:5268/Departments/Edit/"+id;
+        }
+
+    </script>*@
+
+}
+
+
+
+
+@*@model CollegeManagement.Web.Models.Department
 
 @{
     ViewData["Title"] = "Details";
@@ -34,3 +73,4 @@
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+*@

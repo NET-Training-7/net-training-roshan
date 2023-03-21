@@ -1,4 +1,34 @@
-﻿@model CollegeManagement.Web.Models.Department
+﻿@model Department
+
+<h3 class="text-danger">Do you want to delete data for following department?</h3>
+<dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Established)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Established)
+        </dd>
+    </dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <a class="btn btn-success" href="/departments">Cancel</a>
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
+@*@model CollegeManagement.Web.Models.Department
 
 @{
     ViewData["Title"] = "Delete";
@@ -37,3 +67,4 @@
         <a asp-action="Index">Back to List</a>
     </form>
 </div>
+*@

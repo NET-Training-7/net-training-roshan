@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<CollegeManagement.Web.Models.Department>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Departments";
 }
 
-<h1>Index</h1>
+<a asp-controller="departments" asp-action="create" class="btn btn-success float-end"><i class="bi bi-person-plus-fill"></i> New department</a>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -37,9 +34,9 @@
                 @Html.DisplayFor(modelItem => item.Established)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id"><i class="bi-pencil text-warning"></i></a> 
+                    <a asp-action="Details" asp-route-id="@item.Id"><i class="bi-eye"></i></a> 
+                    <a asp-action="Delete" asp-route-id="@item.Id"><i class="bi-trash3 text-danger"></i></a>
             </td>
         </tr>
 }

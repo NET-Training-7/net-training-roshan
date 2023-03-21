@@ -6,6 +6,7 @@ namespace CollegeManagement.Web.data
     public class CollegeDbContext: DbContext
     {
         public DbSet<Student> students { get; set; }
+        public object Students { get; internal set; }
         public DbSet<Major> Majors { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
