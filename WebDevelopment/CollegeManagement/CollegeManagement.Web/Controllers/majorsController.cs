@@ -41,7 +41,8 @@ public class MajorsController : Controller
 
     public ActionResult Edit(int id)
     {
-        return View();
+        var majors= db.Majors.Find(id);
+        return View(majors);
     }
 
     [HttpPost]
@@ -61,7 +62,9 @@ public class MajorsController : Controller
 
     public ActionResult DeleteConfirm(int id)
     {
-        return View();
+        var majors = db.Majors.Find(id);
+        return View(majors);
+
     }
 
     [HttpPost]

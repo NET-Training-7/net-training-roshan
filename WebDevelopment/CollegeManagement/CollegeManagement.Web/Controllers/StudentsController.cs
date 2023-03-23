@@ -2,8 +2,10 @@
 using CollegeManagement.Web.Models;
 using CollegeManagement.Web.data;
 using F = System.IO.File;
-using CollegeManagement.Web.Helpers;
+using CollegeManagement.Web.Extensions;
 using Microsoft.EntityFrameworkCore;
+using CollegeManagement.Web.ViewModels;
+using CollegeManagement.Web.Mappers;
 
 namespace CollegeManagement.Web.Controllers
 {
@@ -25,7 +27,8 @@ namespace CollegeManagement.Web.Controllers
         {
 
             var students = db.students.ToList();
-            return View(students);
+            var studentViewModels = students.ToViewModel();
+            return View(studentViewModels);
         }
 
         public IActionResult Details(int id)
@@ -41,12 +44,15 @@ namespace CollegeManagement.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Add(Student student)
+        public IActionResult Add(StudentViewModel studentVM)
         {
-            if (student == null || !ModelState.IsValid)
+            if (studentVM == null || !ModelState.IsValid)
                 return View("Error", new ErrorViewModel { RequestId = "Register Student" });
-            var avatarPath = FormImageHelper.SaveProfileImage(student.Avatar!);
+            //var avatarPath = FormImageHelper.SaveProfileImage(student.Avatar!);
+            var avatarPath = studentVM.Avatar.SaveProfileImage();
 
+
+            var student = studentVM.ToModel();
             student.AvatarPath = avatarPath;
             db.students.Add(student);
             db.SaveChanges();
@@ -61,14 +67,16 @@ namespace CollegeManagement.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Student student)
+        public IActionResult Edit(StudentViewModel studentVM)
         {
-            if (student == null || !ModelState.IsValid)
+            if (studentVM == null || !ModelState.IsValid)
                 return View("Error", new ErrorViewModel { RequestId = "Update Student" });
 
-            if (student.Avatar != null)
+            var student = studentVM.ToModel();
+            if (studentVM.Avatar != null)
             {
-                var path = FormImageHelper.SaveProfileImage(student.Avatar);
+                //var path = FormImageHelper.SaveProfileImage(student.Avatar);
+                var path = studentVM.Avatar.SaveProfileImage();
                 student.AvatarPath = path;
             }
             db.students.Update(student);
