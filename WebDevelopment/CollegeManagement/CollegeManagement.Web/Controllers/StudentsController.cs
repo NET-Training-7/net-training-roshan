@@ -34,7 +34,7 @@ namespace CollegeManagement.Web.Controllers
         public IActionResult Details(int id)
         {
             var student = db.students.Find(id);
-            return View(student);
+            return View(student.ToViewModel());
         }
 
         public IActionResult Add()
@@ -62,7 +62,7 @@ namespace CollegeManagement.Web.Controllers
         public IActionResult Edit(int id)
         {
             var student = db.students.Find(id);
-            return View(student);
+            return View(student.ToViewModel());
 
         }
 
