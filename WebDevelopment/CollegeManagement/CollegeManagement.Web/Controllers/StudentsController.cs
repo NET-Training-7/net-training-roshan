@@ -18,22 +18,27 @@ namespace CollegeManagement.Web.Controllers
         }
 
         //async
-        //public async Task<IActionResult> Index()
-        //{
-        //    var students = await db.students.ToListAsync();
-        //    return View(students);
-        //}
-        public IActionResult Index()
+        public async Task<IActionResult> Index(string searchText = "")
         {
-
-            var students = db.students.ToList();
-            var studentViewModels = students.ToViewModel();
-            return View(studentViewModels);
+            List<Student> students = new();
+            if (searchText == "")
+                students = await db.Students.ToListAsync();
+            else
+                students = await db.Students.Where(x => x.Name.Contains(searchText) || x.Address.Contains(searchText)).ToListAsync();
+            var studentsViewModels = students.ToViewModel();
+            return View(studentsViewModels);    
         }
+        //public IActionResult Index()
+        //{
+        //
+        //    var students = db.students.ToList();
+        //    var studentViewModels = students.ToViewModel();
+        //    return View(studentViewModels);
+        //}
 
         public IActionResult Details(int id)
         {
-            var student = db.students.Find(id);
+            var student = db.Students.Find(id);
             return View(student.ToViewModel());
         }
 
@@ -54,14 +59,14 @@ namespace CollegeManagement.Web.Controllers
 
             var student = studentVM.ToModel();
             student.AvatarPath = avatarPath;
-            db.students.Add(student);
+            db.Students.Add(student);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         public IActionResult Edit(int id)
         {
-            var student = db.students.Find(id);
+            var student = db.Students.Find(id);
             return View(student.ToViewModel());
 
         }
@@ -79,20 +84,20 @@ namespace CollegeManagement.Web.Controllers
                 var path = studentVM.Avatar.SaveProfileImage();
                 student.AvatarPath = path;
             }
-            db.students.Update(student);
+            db.Students.Update(student);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
         public IActionResult DeleteConfirm(int id)
         {
-            var student = db.students.Find(id);
+            var student = db.Students.Find(id);
             return View(student);
         }
 
         [HttpPost]
         public IActionResult Delete(Student student)
         {
-            db.students.Remove(student);
+            db.Students.Remove(student);
             db.SaveChanges();
 
             return RedirectToAction("Index");
