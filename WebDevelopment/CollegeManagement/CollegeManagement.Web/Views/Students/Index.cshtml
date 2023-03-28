@@ -14,6 +14,68 @@
 </div>
 
 
+<table class="table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Roll No.</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Date of Birth</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Major</th>
+            <th>Semester</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>
+                    @{
+                        var path = string.IsNullOrEmpty(student.AvatarPath) ? "/images/profiles/student.jpeg" : student.AvatarPath;
+                    }
+                    <img src="@path" height="35" class="rounded-circle" />
+                </td>
+                <td>@student.RollNo</td>
+                <td>@student.Name</td>
+                <td>@student.Gender</td>
+                <td>@student.Address</td>
+                <td>@student.Dob?.ToString("ddd, MMM dd yyyy")</td>
+                <td>@student.Contact</td>
+                <td>@student.Email</td>
+                <td>@student.Major</td>
+                <td>@student.Semester</td>
+                <td>
+                    <a href="/students/details?id=@student.Id"><i class="bi bi-eye"></i></a>
+                    <a href="/students/edit?id=@student.Id"><i class="bi bi-pencil text-warning"></i></a>
+                    <a href="/students/deleteconfirm?id=@student.Id"><i class="bi bi-trash3 text-danger"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@*@using CollegeManagement.Web.ViewModels;
+@model List<StudentViewModel>
+
+<div class="row">
+    <div class="col-8">
+        <form asp-action="Index" class="d-flex" method="get">
+            <input type="text" name="searchText" placeholder="Search students..." class="form-control me-2" />
+            <button type="submit" class="btn btn-success">Search</button>
+        </form>
+    </div>
+    <div class="col-4">
+        <a asp-action="add" class="btn btn-success float-end"><i class="bi bi-plus-lg "></i> Student Registration</a>
+    </div>
+</div>
+
+
 
 <table class="table">
     <thead>
@@ -59,4 +121,4 @@
             </tr>
         }
     </tbody>
-</table>
+</table>*@

@@ -1,3 +1,5 @@
+using CollegeManagement.Infrastructure.Repositories;
+using CollegeManagement.Infrastructure.Repositories.Interfaces;
 using CollegeManagement.Web.data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,7 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<CollegeDbContext>();
-
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<MajorsRepository>();   //DI
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
