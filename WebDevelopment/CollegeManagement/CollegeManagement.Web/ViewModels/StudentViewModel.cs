@@ -27,8 +27,10 @@ namespace CollegeManagement.Web.ViewModels
         public string? AvatarPath { get; set; }
         [DisplayName("Roll Number")]
         public int RollNo { get; set; }
+        [DisplayName("Major")]
 
-        public string Major { get; set; } = string.Empty;
+        public int MajorId { get; set; }
+        public string MajorName { get; set; } = string.Empty;
         public string Program { get; set; } = string.Empty;
         public string Semester { get; set; } = string.Empty;
     }

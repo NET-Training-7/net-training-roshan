@@ -15,7 +15,7 @@ public static class StudentMapper
          Address = studentVM.Address,
          Gender = studentVM.Gender,
          Email = studentVM.Email,
-         Major = studentVM.Major,
+         MajorId = studentVM.MajorId,
          Program = studentVM.Program,
          RollNo = studentVM.RollNo,
          Semester = studentVM.Semester
@@ -31,7 +31,8 @@ public static class StudentMapper
          Address = student.Address,
          Gender = student.Gender,
          Email = student.Email,
-         Major = student.Major,
+         MajorName = student.Major?.Name ?? "N/A",
+         MajorId = student.Major.Id,
          Program = student.Program,
          RollNo = student.RollNo,
          Semester = student.Semester,
